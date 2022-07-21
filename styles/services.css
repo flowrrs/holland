@@ -70,7 +70,7 @@
 /* styles for tablets or some shit */
 
 @media screen and (max-width: 900px) {
-  #serviceBlocksContainer {
+  #serviceBlocksContainer .inner {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
@@ -83,7 +83,7 @@
 /* styles for phones or some shit */
 
 @media screen and (max-width: 570px) {
-  #serviceBlocksContainer {
+  #serviceBlocksContainer .inner{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
