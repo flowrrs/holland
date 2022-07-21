@@ -12,6 +12,8 @@
  const textareaInput = document.getElementById("textareaInput")
  const contactEmailAddressInput = document.getElementById("contactEmailAddressInput")
  const contactSuccessMessage = document.getElementById("contactSuccessMessage")
+ const waitToContactMessage = document.getElementById("waitToContactMessage")
+ const contactSendingMessage = document.getElementById("contactSendingMessage")
  
  const store = {
    lastContactSubmitTime: 1639614273254,
@@ -25,10 +27,14 @@
  
    // If lastSubmittedTime is falsey, that means the form
    // has never been submitted from this browser.
-   if (lastSubmittedTime && timeDifference < 30000) return
- 
+   if (lastSubmittedTime && timeDifference < 30000) {
+    return showWaitToContactMessage()
+   }
+   
    localStorage.setItem("lastContantSubmitTime", nowTime)
  
+   toggleDisplayValue(contactSendingMessage)
+
    const firstName = contactFirstNameInput.value
    const lastName = contactLastNameInput.value
    const emailAddress = contactEmailAddressInput.value
@@ -53,7 +59,18 @@
    contactLastNameInput.value = ""
    textareaInput.value = ""
    contactEmailAddressInput.value = ""
-   toggleDisplayValue(contactSuccessMessage)
+   showContactSuccessMessage()
+ }
+
+ const showWaitToContactMessage = () => {
+  toggleDisplayValue(waitToContactMessage)
+  setTimeout(() => toggleDisplayValue(waitToContactMessage), 5000)
+ }
+
+ const showContactSuccessMessage = () => {
+  toggleDisplayValue(contactSendingMessage)
+  toggleDisplayValue(contactSuccessMessage)
+  setTimeout(() => toggleDisplayValue(contactSuccessMessage), 5000)
  }
  
  contactFormButton.addEventListener("click", handleContactFormButtonClick)

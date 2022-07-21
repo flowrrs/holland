@@ -100,3 +100,8 @@
   max-width: max-content;
   margin-top: 24px;
 }
+
+#waitToContactMessage, #contactSendingMessage, #contactSuccessMessage {
+  display: none;
+  margin-bottom: 24px;
+}

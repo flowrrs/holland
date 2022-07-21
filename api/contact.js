@@ -9,7 +9,7 @@ export default (req, res) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: "colshacol@gmail.com",
+      user: "imflowrrs@gmail.com",
       pass: "Rokkibeats1!",
     },
   })

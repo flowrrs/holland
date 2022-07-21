@@ -70,12 +70,14 @@ function toggleElementScrollable(targetElement) {
 }
 
 function showServiceDetails(event) {
+  const servicesHeader = document.querySelector('#services')
   const serviceBlocksContainer = document.querySelector('#serviceBlocksContainer')
   const popup = event.currentTarget.querySelector('.popup')
   popup.originalParent = event.currentTarget
   toggleDisplayValue(popup)
   toggleDisplayValue(inner, "grid")
   serviceBlocksContainer.prepend(popup)
+  servicesHeader.scrollIntoView()
 }
 
 serviceBlocks.forEach((serviceBlock) => {
