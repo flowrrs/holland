@@ -101,7 +101,7 @@
   margin-top: 24px;
 }
 
-#waitToContactMessage, #contactSendingMessage, #contactSuccessMessage {
+#waitToContactMessage, #contactSendingMessage, #contactSuccessMessage, #incompleteFieldsMessage{
   display: none;
   margin-bottom: 24px;
 }

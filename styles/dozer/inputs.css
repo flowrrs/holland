@@ -36,10 +36,11 @@ textarea {
 input::placeholder,
 textarea::placeholder {
   font-size: 1.8rem;
-  color: var(--black2);
+  color: var(--black3);
   letter-spacing: 0px;
   font-family: var(--fonts0);
   font-weight: 400;
+  font-style: italic;
 }
 
 select {
